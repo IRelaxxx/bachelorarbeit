@@ -2,7 +2,7 @@
   "name": "loadingtime",
   "version": "1.0.0",
   "description": "",
-  "main": "cli.js",
+  "main": "./src/cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,5 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^6.0.0"
+  },
+  "bin": {
+    "loadingtime": "./src/cli.js"
   }
 }
