@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 function filterEntries(entries, whitelist) {
-    let filteredentries = entries.filter(e => whitelist.map(w => String(e.request.url).matches(w)).some(e => e === true));
+    let filteredentries = entries.filter(e => whitelist.map(w => e.request.url.match(w) !== null).some(e => e === true));
     let minStartDates = filteredentries.map(e => e.startedDateTime).sort();
     let maxEndDates = filteredentries.map(e => {e.startedDateTime; e.time}).map(e => addMs(new Date(e.startedDateTime), e.time)).sort();
     return {entries: filteredentries, time: maxEndDates[maxEndDates.length - 1].getTime() - minStartDates[0].getTime()};
