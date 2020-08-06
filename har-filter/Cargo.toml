@@ -1,0 +1,16 @@
+[package]
+name = "har-filter"
+version = "1.0.0"
+authors = ["Alexander Krahl <alexander.krahl@stud.htwk-leipzig.de>"]
+edition = "2018"
+license = "MIT"
+repository = "https://gitlab.imn.htwk-leipzig.de/akrahl/bachelorarbeit"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = "3.0.0-beta.1"
+har = "0.5"
+regex = "1.3"
+chrono = "0.4"
