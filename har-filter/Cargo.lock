@@ -155,6 +155,7 @@ dependencies = [
  "chrono",
  "clap",
  "har",
+ "lazy_static",
  "regex",
 ]
 
