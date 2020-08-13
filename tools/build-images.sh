@@ -1,10 +1,5 @@
 #!/bin/bash
 
-function pause(){
- read -s -n 1 -p "Press any key to continue . . ."
- echo ""
-}
-
 docker build -t $1:http1 -f ../nginx-docker/Dockerfile.http1 ../nginx-docker/
 docker build -t $1:http2 -f ../nginx-docker/Dockerfile.http2 ../nginx-docker/
 docker build -t $1:http3 -f ../nginx-docker/Dockerfile.http3 ../nginx-docker/
