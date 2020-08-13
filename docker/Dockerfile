@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM SOURCEIMAGE
 
 RUN apt-get update && apt-get install iproute2 -y --no-install-recommends && apt-get clean
 COPY configure.sh /root/configure.sh
