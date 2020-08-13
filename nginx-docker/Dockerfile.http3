@@ -15,7 +15,7 @@ RUN ./configure                                 \
     --with-openssl=../quiche/deps/boringssl \
     --with-quiche=../quiche
 RUN make -j$(nproc)
-COPY nginx.conf /nginx-1.16.1/conf/
+COPY nginx.conf.http3 /nginx-1.16.1/conf/nginx.conf
 
 WORKDIR /nginx-1.16.1/objs
 COPY startup.sh .

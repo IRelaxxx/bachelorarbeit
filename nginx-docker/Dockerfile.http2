@@ -1,0 +1,23 @@
+# same base as rust:1.45
+FROM buildpack-deps:buster
+WORKDIR /
+RUN apt-get update && apt-get install -y --no-install-recommends cmake && apt-get clean
+RUN curl -O https://nginx.org/download/nginx-1.16.1.tar.gz && tar xzvf nginx-1.16.1.tar.gz && rm nginx-1.16.1.tar.gz
+# we use quiche only so every instance uses the same ssl lib
+RUN git clone --recursive https://github.com/cloudflare/quiche && cd quiche && find . -type f -not -name 'deps'-delete
+WORKDIR /nginx-1.16.1
+RUN mkdir logs
+COPY boringssl-make.patch .
+RUN patch -p01 < boringssl-make.patch
+RUN ./configure                                 \
+    --prefix=$PWD                           \
+    --with-http_ssl_module                  \
+    --with-http_v2_module                   \
+    --with-openssl=../quiche/deps/boringssl
+
+RUN make -j$(nproc)
+COPY nginx.conf.http2 /nginx-1.16.1/conf/nginx.conf
+
+WORKDIR /nginx-1.16.1/objs
+COPY startup.sh .
+ENTRYPOINT [ "./startup.sh" ]
