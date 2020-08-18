@@ -14,7 +14,7 @@ RUN ./configure                                 \
     --with-http_ssl_module                  \
     --with-http_v2_module                   \
     --with-openssl=../quiche/deps/boringssl \
-    --with-cc-opts="-Wno-error"
+    --with-cc-opt="-Wno-error"
 
 RUN make -j$(nproc)
 COPY nginx.conf.http2 /nginx-1.16.1/conf/nginx.conf

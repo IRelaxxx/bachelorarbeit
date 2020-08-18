@@ -13,7 +13,7 @@ RUN ./configure                                 \
     --prefix=$PWD                           \
     --with-http_ssl_module                  \
     --with-openssl=../quiche/deps/boringssl \
-    --with-cc-opts="-Wno-error"
+    --with-cc-opt="-Wno-error"
 RUN make -j$(nproc)
 COPY nginx.conf.http1 /nginx-1.16.1/conf/nginx.conf
 
