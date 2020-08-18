@@ -12,7 +12,8 @@ RUN patch -p01 < boringssl-make.patch
 RUN ./configure                                 \
     --prefix=$PWD                           \
     --with-http_ssl_module                  \
-    --with-openssl=../quiche/deps/boringssl
+    --with-openssl=../quiche/deps/boringssl \
+    --with-cc-opts="-Wno-error"
 RUN make -j$(nproc)
 COPY nginx.conf.http1 /nginx-1.16.1/conf/nginx.conf
 

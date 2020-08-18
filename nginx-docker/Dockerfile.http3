@@ -13,7 +13,8 @@ RUN ./configure                                 \
     --with-http_v2_module                   \
     --with-http_v3_module                   \
     --with-openssl=../quiche/deps/boringssl \
-    --with-quiche=../quiche
+    --with-quiche=../quiche \
+    --with-cc-opts="-Wno-error"
 RUN make -j$(nproc)
 COPY nginx.conf.http3 /nginx-1.16.1/conf/nginx.conf
 
