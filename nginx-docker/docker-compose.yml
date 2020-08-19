@@ -12,5 +12,5 @@ services:
       - /var/www/html:/var/www/html
       - /etc/letsencrypt:/etc/letsencrypt:ro
     environment:
-      - DOMIANNAME=
+      - DOMAINNAME=
     privileged: true
