@@ -44,7 +44,7 @@ http {
         ssl_protocols TLSv1.3;
         proxy_request_buffering off;
 
-        add_header alt-svc 'h3-29=":443"; ma=3600,h3-27=":443"; ma=3600,h3-T050=":443"; ma=3600,h3-Q050=":443"; ma=3600,h3-Q046=":443"; ma=3600,h3-Q043=":443"; ma=3600,quic=":443"; ma=3600; v="46,43"';
+        add_header alt-svc 'h3-29=":443"; ma=2592000,h3-27=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"';
         root /var/www/html;
         #charset koi8-r;
 
