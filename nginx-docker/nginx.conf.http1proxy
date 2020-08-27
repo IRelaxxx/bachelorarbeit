@@ -58,7 +58,7 @@ log_format apm '"$time_local" client=$remote_addr '
         access_log /var/log/nginx/http1proxy.log apm;
 
         location / {
-            proxy_pass https://localhost:8443:
+            proxy_pass https://localhost:8443;
         }
     }
 }

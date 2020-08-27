@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends cmake && apt-ge
 RUN curl -O https://nginx.org/download/nginx-1.16.1.tar.gz && tar xzvf nginx-1.16.1.tar.gz && rm nginx-1.16.1.tar.gz
 RUN git clone --recursive https://github.com/cloudflare/quiche
 WORKDIR /nginx-1.16.1
+RUN mkdir logs
 RUN patch -p01 < ../quiche/extras/nginx/nginx-1.16.patch
 RUN ./configure                                 \
     --prefix=$PWD                           \
