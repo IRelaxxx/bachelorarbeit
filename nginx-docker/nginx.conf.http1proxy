@@ -45,7 +45,7 @@ log_format apm '"$time_local" client=$remote_addr '
     server {
         server_name  DOMAIN;
 	
-        listen 8443 ssl;
+        listen 443 ssl;
 
         ssl_certificate /etc/letsencrypt/live/DOMAIN/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/DOMAIN/privkey.pem;
@@ -53,13 +53,12 @@ log_format apm '"$time_local" client=$remote_addr '
         ssl_protocols TLSv1.3;
         proxy_request_buffering off;
 
-        root /var/www/html;
         #charset koi8-r;
 
-        access_log /var/log/nginx/http1.log apm;
+        access_log /var/log/nginx/http1proxy.log apm;
 
         location / {
-            try_files $uri $uri/ /index.html;
+            proxy_pass https://localhost:8443:
         }
     }
 }

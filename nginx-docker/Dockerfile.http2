@@ -6,7 +6,6 @@ RUN curl -O https://nginx.org/download/nginx-1.16.1.tar.gz && tar xzvf nginx-1.1
 # we use quiche only so every instance uses the same ssl lib
 RUN git clone --recursive https://github.com/cloudflare/quiche && cd quiche && find . -type f -not -name 'deps'-delete
 WORKDIR /nginx-1.16.1
-RUN mkdir logs
 COPY boringssl-make.patch .
 RUN patch -p01 < boringssl-make.patch
 RUN ./configure                                 \
