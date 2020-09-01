@@ -1,0 +1,14 @@
+http1, jede anfrage eine conversation
+server->client:1508 k bytes
+client->server:25 k bytes
+gesamt: 1533
+
+http2, nur 2 conversations
+server->client:1506 k bytes
+client->server:9,178 k bytes
+gesamt: 1515,178
+
+http3, nur 2 conversations tcp, eine udp
+server->client:1625 k bytes
+client->server:54 k bytes
+gesamt 1679
