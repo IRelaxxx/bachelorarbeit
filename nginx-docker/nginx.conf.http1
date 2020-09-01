@@ -45,7 +45,7 @@ log_format apm '"$time_local" client=$remote_addr '
     server {
         server_name  DOMAIN;
 	
-        listen 8443 ssl;
+        listen 443 ssl;
 
         ssl_certificate /etc/letsencrypt/live/DOMAIN/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/DOMAIN/privkey.pem;
