@@ -72,6 +72,20 @@ http {
             http2_push /media/partner-cararis-footer.3d19a715.png;
             http2_push /media/partner-dr-loeffler-footer.2632b7d0.png;
             http2_push /media/play-store-2x.4477e766.png;
+            try_files $uri $uri/ /index.html;
+        }
+
+        location = / {
+            http2_push /css/6.863ee2b7.chunk.css;
+            http2_push /css/main.40898aba.chunk.css;
+            http2_push /js/6.3c1b61a6.chunk.js;
+            http2_push /js/main.58a97bcb.chunk.js;
+            http2_push /media/earth.de7be890.png;
+            http2_push /media/OpenSans-Regular.3ed9575d.ttf;
+            http2_push /media/partner-cararis-footer.3d19a715.png;
+            http2_push /media/partner-dr-loeffler-footer.2632b7d0.png;
+            http2_push /media/play-store-2x.4477e766.png;
+            try_files $uri $uri/ /index.html;
         }
     }
 }
