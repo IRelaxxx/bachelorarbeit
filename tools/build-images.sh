@@ -4,8 +4,6 @@ docker build -t $1:http1 -f ../nginx-docker/Dockerfile.http1 ../nginx-docker/
 docker build -t $1:http2 -f ../nginx-docker/Dockerfile.http2 ../nginx-docker/
 docker build -t $1:http3 -f ../nginx-docker/Dockerfile.http3 ../nginx-docker/
 
-docker build -t $1:http1proxy -f ../nginx-docker/Dockerfile.http1proxy ../nginx-docker/
-
 mkdir tmp
 
 cp ../docker/Dockerfile tmp/Dockerfile

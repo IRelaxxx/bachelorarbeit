@@ -1,4 +1,0 @@
-FROM akrahl/nginx-docker:http1
-WORKDIR /nginx-1.16.1
-COPY nginx.conf.http1proxy /nginx-1.16.1/conf/nginx.conf
-WORKDIR /nginx-1.16.1/objs

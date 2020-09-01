@@ -15,17 +15,3 @@ services:
     environment:
       - DOMAINNAME=
     privileged: true
-  proxy:
-    container_name: http-proxy
-    restart: always
-    image: akrahl/nginx-docker:http1proxy
-    ports:
-      - "80:80/tcp"
-      - "443:443/tcp"
-      - "443:443/udp"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt:ro
-      - /var/log:/var/log
-    environment:
-      - DOMAINNAME=
-    privileged: true
