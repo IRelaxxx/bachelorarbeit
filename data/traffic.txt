@@ -12,3 +12,8 @@ http3, nur 2 conversations tcp, eine udp
 server->client:1625 k bytes
 client->server:54 k bytes
 gesamt 1679
+
+http2 push, nur 2 conversations
+server->client:4351 k bytes
+client->server:39 k bytes
+gesamt:
