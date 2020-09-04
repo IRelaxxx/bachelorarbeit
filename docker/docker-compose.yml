@@ -1,0 +1,20 @@
+version: "3.3"
+services:
+  server:
+    container_name: http-server-tc
+    restart: always
+    image: <image>
+    ports:
+      - "80:80/tcp"
+      - "443:443/tcp"
+      - "443:443/udp"
+    volumes:
+      - /var/www/html:/var/www/html
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /var/log:/var/log
+    environment:
+      - DOMAINNAME=
+      - LOSS=
+    #      - RATE=
+    #      - BURST=
+    privileged: true
