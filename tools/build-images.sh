@@ -20,5 +20,8 @@ cp ../docker/Dockerfile tmp/Dockerfile
 sed -i "s&SOURCEIMAGE&"$1":http3&g" tmp/Dockerfile
 docker build -t $1-tc:http3 -f tmp/Dockerfile ../docker/
 
+cp ../docker/Dockerfile tmp/Dockerfile
+sed -i "s&SOURCEIMAGE&"$1":http2-push&g" tmp/Dockerfile
+docker build -t $1-tc:http2push -f tmp/Dockerfile ../docker/
 
 rm -r tmp
