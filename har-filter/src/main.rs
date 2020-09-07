@@ -13,7 +13,7 @@ fn main() {
     .author("Alexander Krahl <alexander.krahl@stud.htwk-leipzig.de>")
     .about("")
     .arg("-o, --output=[FILE] 'Output file'")
-    .arg("-ot, --outputtime=[FILE] 'Append elapsed time of the request to a file or created it if it doesnt exist'")
+    .arg("-t, --outputtime=[FILE] 'Append elapsed time of the request to a file or created it if it doesnt exist'")
     .arg("[input] 'input file'")
     .arg("[whitelist] 'whitelist file with valid regexes, one per line. see https://docs.rs/regex/1.3.9/regex/#syntax'")
     .get_matches();
