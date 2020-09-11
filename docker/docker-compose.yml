@@ -17,4 +17,5 @@ services:
       - LOSS=
     #      - RATE=
     #      - BURST=
+    #      - LATENCY=
     privileged: true
