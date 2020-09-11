@@ -4,7 +4,7 @@ docker build -t $1:http1 -f ../nginx-docker/Dockerfile.http1 ../nginx-docker/
 docker build -t $1:http2 -f ../nginx-docker/Dockerfile.http2 ../nginx-docker/
 docker build -t $1:http3 -f ../nginx-docker/Dockerfile.http3 ../nginx-docker/
 
-docker build -t $1:http2push -f ../nginx-docker/Dockerfile.http2push ../nginx-docker/
+docker build -t $1:http2-push -f ../nginx-docker/Dockerfile.http2push ../nginx-docker/
 
 mkdir tmp
 
