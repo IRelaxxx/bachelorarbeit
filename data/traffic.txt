@@ -28,11 +28,10 @@ server->client:1536 k bytes
 client->server:41 k bytes
 gesamt: 1578
 
-// werte sind nicht was erwartet wurde. nochmal messen
 http3 4mbit
 server->client:1568 k bytes
-client->server:242 k bytes
-gesamt: 1810
+client->server:41 k bytes
+gesamt: 1609
 
 http1 5%loss
 server->client:1520 k bytes
@@ -49,11 +48,10 @@ server->client:1478 k bytes
 client->server:22 k bytes
 gesamt: 1501
 
-// outlier? nochmal messen
 http2 10%loss
-server->client:2780 k bytes
-client->server:61 k bytes
-gesamt: 2842
+server->client:1537 k bytes
+client->server:36 k bytes
+gesamt: 1573
 
 http3 5%loss
 server->client:1588 k bytes

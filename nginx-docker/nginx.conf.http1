@@ -56,7 +56,7 @@ log_format apm '"$time_local" client=$remote_addr '
         root /var/www/html;
         #charset koi8-r;
 
-        access_log /var/log/nginx/http1.log apm;
+        #access_log /var/log/nginx/http1.log apm;
 
         location / {
             try_files $uri $uri/ /index.html;
