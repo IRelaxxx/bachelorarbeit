@@ -18,17 +18,17 @@ server->client:4351 k bytes
 client->server:39 k bytes
 gesamt:
 
-http1 4mbit
+http1 4mbit 1ms
 server->client:1532 k bytes
 client->server:44 k bytes
 gesamt: 1576
 
-http2 4mbit
+http2 4mbit 1ms
 server->client:1536 k bytes
 client->server:41 k bytes
 gesamt: 1578
 
-http3 4mbit
+http3 4mbit 1ms
 server->client:1568 k bytes
 client->server:41 k bytes
 gesamt: 1609
@@ -62,3 +62,36 @@ http3 10%loss
 server->client:1592 k bytes
 client->server:84 k bytes
 gesamt: 1676
+
+http1 4mbit 1000ms
+server->client:1528 k bytes
+client->server:46 k bytes
+gesamt: 1574
+
+http2 4mbit 1000ms
+server->client:1529 k bytes
+client->server:33 k bytes
+gesamt: 1562
+
+http3 4mbit 50ms
+server->client:1586 k bytes
+client->server:175 k bytes
+gesamt: 1761
+
+http2 push 4mbit 1000ms
+server->client:1900 k bytes
+client->server:42 k bytes
+gesamt: 1942
+server->client:1643 k bytes
+client->server:39 k bytes
+gesamt: 1682
+
+http2 push 5%loss
+server->client:2275 k bytes
+client->server:31 k bytes
+gesamt: 2306
+
+http2 push 10%loss -> swankt aber maximal, es ab messungen mit +6000 bytes aber auch welche wo die performance wie bei 5% loss ist
+server->client:3121 k bytes
+client->server:58 k bytes
+gesamt: 3179
