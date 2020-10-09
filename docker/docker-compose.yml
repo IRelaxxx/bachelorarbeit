@@ -4,6 +4,8 @@ services:
     container_name: http-server-tc
     restart: always
     image: <image>
+    cap_add:
+      - NET_ADMIN
     ports:
       - "80:80/tcp"
       - "443:443/tcp"
@@ -18,4 +20,4 @@ services:
     #      - RATE=
     #      - BURST=
     #      - LATENCY=
-    privileged: true
+    #privileged: true
