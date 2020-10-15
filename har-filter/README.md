@@ -2,6 +2,8 @@
 
 is a tool to filter har entries down to specific domains.
 
+Install with `cargo install --path .`
+
 Usage:
 
 `har-filter <input-file> <whitelist-file>`
