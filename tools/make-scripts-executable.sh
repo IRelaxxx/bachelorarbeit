@@ -6,3 +6,4 @@ chmod +x ../docker/configure.sh
 chmod +x ./loop-request.sh
 chmod +x ./loop-request-out.sh
 chmod +x ./launch-chromium.sh 
+chmod +x ./launch-chromium-quic.sh 
